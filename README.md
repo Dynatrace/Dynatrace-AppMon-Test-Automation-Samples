@@ -1,7 +1,8 @@
 # Dynatrace Test Automation Samples Library
 
 Collector of Samples showcasing Metrics-Driven Continuous Delivery with Dynatrace Test Automation
-In progress - contribution welcome!
+
+*In progress - contribution welcome!*
 
 ## What is Dynatrace Test Automation? 
 
@@ -15,3 +16,4 @@ Dynatrace AppMon up and running - free trial & personal licenses can be obtained
 
 ## Samples Directory
 
+* [Selenium](./selenium/)
