@@ -22,7 +22,7 @@ Dynatrace AppMon up and running - free trial & personal licenses can be obtained
 
 Post any problems, questions or suggestions to the Dynatrace Community's [Application Monitoring & UEM Forum](https://answers.dynatrace.com/spaces/146/index.html).
 
-Pull Requests Welcome!
+**Pull Requests Welcome!**
 
 <a name="resources"/>
 ## Additional Resources
