@@ -14,6 +14,8 @@ Collector of Samples showcasing Metrics-Driven Continuous Delivery with Dynatrac
 
 Dynatrace AppMon up and running - free trial & personal licenses can be obtained here: http://bit.ly/dtpersonal
 
+Some samples require the demo application easyTravel: https://community.dynatrace.com/community/display/DL/Demo+Applications+-+easyTravel
+
 ## Samples Directory
 
 * [Selenium](./selenium/)
