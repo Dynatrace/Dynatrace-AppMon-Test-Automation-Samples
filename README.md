@@ -17,6 +17,11 @@ Dynatrace AppMon up and running - free trial & personal licenses can be obtained
 ## Samples Directory
 
 * [Selenium](./selenium/)
+* JMeter
+* SoapUI
+* Maven
+* Ant
+* JUnit
 
 ## Problems? Questions? Suggestions?
 
