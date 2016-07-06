@@ -19,8 +19,8 @@ Two test cases (bookParis and bookSpecialOffers) are run with three different br
 ### 1. Without test run registration (automatic test run generation)
 
 * Code: [Auto test-run](./code/auto-test-run/)
-* External libraries for Selenium:
-  * [selenium-2.53.0](./code/auto-test-run/lib/selenium-2.53.0), downloaded originally from http://www.seleniumhq.org/download/
+* External libraries for Selenium (http://www.seleniumhq.org/download/):
+  * [selenium-2.53.0](./code/auto-test-run/lib/selenium-2.53.0) 
   * [third party web driver](./code/auto-test-run/lib/driver)
 
 ### 2. With test run registration
