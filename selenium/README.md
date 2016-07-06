@@ -10,9 +10,11 @@
 
 <img src="https://github.com/Dynatrace/Dynatrace-Test-Automation-Samples/blob/master/selenium/img/easyTravelConfiguration.png" width=300" /> <img src="https://github.com/Dynatrace/Dynatrace-Test-Automation-Samples/blob/master/selenium/img/easyTravelRunning.png" width=300" />
 
-### Browsers
+### Others
 
-Firefox, Chrome and Internet Explorer need to be installed locally.
+* Browsers: Firefox, Chrome and Internet Explorer need to be installed locally.
+* Java JDK
+* Ant
 
 ## Sample
 
