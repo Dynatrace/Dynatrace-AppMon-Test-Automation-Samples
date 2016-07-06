@@ -31,7 +31,10 @@ The sample run two different test cases (booking a journey to Paris and booking 
 
 * Start easyTravel (only web required, Standard scenario, manual visits)
 * Make sure the agents are connected to Dynatrace
-* Run the sample with Ant: ant test
+* Run the sample with Ant: 
+```
+ant test
+```
 
 #### Result
 
