@@ -16,3 +16,12 @@ Two test cases (bookParis and bookSpecialOffers) are run with three different br
 
 ## Samples
 
+### 1. Without test run registration
+
+* Code: 
+* External libraries: 
+
+### 2. With test run registration
+
+* Code: 
+* External libraries: 
