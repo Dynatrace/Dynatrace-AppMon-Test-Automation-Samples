@@ -22,6 +22,16 @@ Two test cases (bookParis and bookSpecialOffers) are run with three different br
 * External libraries for Selenium (http://www.seleniumhq.org/download/):
   * [selenium-2.53.0](./code/auto-test-run/lib/selenium-2.53.0) 
   * [third party web driver](./code/auto-test-run/lib/driver)
+ 
+#### Run
+
+# Start easyTravel (only web required, Standard scenario, manual visits)
+# Make sure the agents are connected to Dynatrace
+# Run the sample with Ant: ant test
+
+#### Result
+
+
 
 ### 2. With test run registration
 
