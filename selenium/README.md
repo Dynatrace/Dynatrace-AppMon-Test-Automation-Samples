@@ -20,8 +20,8 @@ Two test cases (bookParis and bookSpecialOffers) are run with three different br
 
 * Code: [Auto test-run](./selenium/code/auto-test-run/)
 * External libraries: 
-** [web driver](./selenium/code/auto-test-run/lib/driver)
-** [selenium-2.53.0](./selenium/code/auto-test-run/lib/selenium-2.53.0)
+  * [web driver](./selenium/code/auto-test-run/lib/driver)
+  * [selenium-2.53.0](./selenium/code/auto-test-run/lib/selenium-2.53.0)
 
 ### 2. With test run registration
 
