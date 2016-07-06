@@ -8,15 +8,19 @@
 * Follow the installation & configuration steps: https://community.dynatrace.com/community/display/DL/Demo+Applications+-+easyTravel#DemoApplications-easyTravel-InstallingeasyTravel
 * Make sure that easyTravel portal is running on http://localhost:8079/ 
 
-<img src="https://github.com/Dynatrace/Dynatrace-Test-Automation-Samples/blob/master/selenium/img/easyTravelConfiguration.png" width=400" /> <img src="https://github.com/Dynatrace/Dynatrace-Test-Automation-Samples/blob/master/selenium/img/easyTravelRunning.png" width=400" />
+<img src="https://github.com/Dynatrace/Dynatrace-Test-Automation-Samples/blob/master/selenium/img/easyTravelConfiguration.png" width=300" /> <img src="https://github.com/Dynatrace/Dynatrace-Test-Automation-Samples/blob/master/selenium/img/easyTravelRunning.png" width=300" />
 
 ### Browsers
 
-Two test cases (bookParis and bookSpecialOffers) are run with three different browsers (Firefox, Chrome and Internet Explorer). The browsers needs to be installed locally.
+Firefox, Chrome and Internet Explorer need to be installed locally.
 
-## Samples
+## Sample
 
-### 1. Without test run registration (automatic test run generation)
+The sample run two different test cases (booking a journey to Paris and booking a journey from the special offers page. Both test cases are run in Firefox, Chrome and Internet Explorer.
+
+[Screen recording](./video/easyTravel_Selenium.avi)
+
+### Option 1 - without test run registration
 
 * Code: [Auto test-run](./code/auto-test-run/)
 * External libraries for Selenium (http://www.seleniumhq.org/download/):
@@ -33,7 +37,7 @@ Two test cases (bookParis and bookSpecialOffers) are run with three different br
 
 
 
-### 2. With test run registration
+### Option 2 - with test run registration
 
 * Code: 
 * External libraries: 
