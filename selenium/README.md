@@ -22,7 +22,7 @@
 
 The sample run two different test cases (booking a journey to Paris and booking a journey from the special offers page. Both test cases are run in Firefox, Chrome and Internet Explorer.
 
-* Code: [Auto test-run](./code/)
+* [Code](./code/)
 * External libraries for Selenium (http://www.seleniumhq.org/download/):
   * [selenium-2.53.0](./code/lib/selenium-2.53.0) 
   * [third party web driver](./code/lib/driver)
