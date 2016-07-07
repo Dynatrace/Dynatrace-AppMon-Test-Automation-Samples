@@ -45,3 +45,6 @@ ant register-test
 
 #### Result
 
+*Option 1*:
+
+<img src="https://github.com/Dynatrace/Dynatrace-Test-Automation-Samples/blob/master/selenium/img/result_auto-test-run.png" />
