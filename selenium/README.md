@@ -1,5 +1,7 @@
 # Selenium
 
+<img src="https://github.com/Dynatrace/Dynatrace-Test-Automation-Samples/blob/master/selenium/img/selenium.png" />
+
 ## Prerequisite
 
 ### easyTravel
