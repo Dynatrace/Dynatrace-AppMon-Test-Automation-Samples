@@ -38,7 +38,7 @@ The sample run two different test cases (booking a journey to Paris and booking 
 ant test
 ```
 
-*Option 2*: Run the sample with Ant with test registration (to pass Dynatrace Server meta data such as build & version information)
+*Option 2*: Run the sample with Ant with test registration (to pass Dynatrace AppMon Server meta data such as build & version information)
 ```
 ant register-test
 ```
