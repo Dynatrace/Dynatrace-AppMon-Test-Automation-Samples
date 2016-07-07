@@ -13,9 +13,11 @@ public class EasyTravelBookingTest {
 	private WebDriver driver;
 	private String baseUrl;
 	private String browser;
+	private String testRunId;
 
 	public EasyTravelBookingTest(String browser) {
 		this.browser = browser;
+		this.testRunId = System.getProperty("dtTestrunID");
 	}
 
 	@Parameterized.Parameters
@@ -41,6 +43,9 @@ public class EasyTravelBookingTest {
 		String testName = "EasyTravel.BookingTest.BookParis";
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("sessionStorage.DT_TESTNAME = \"" + testName + "\";");
+		if(testRunId != null) {
+			js.executeScript("sessionStorage.DT_TESTRUNID = \"" + testRunId + "\";");
+		}
 
 		// search for trip to Paris
 		driver.findElement(By.id("iceform:destination")).clear();
@@ -115,6 +120,9 @@ public class EasyTravelBookingTest {
 		String testName = "EasyTravel.BookingTest.BookSpecialOffers";
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("sessionStorage.DT_TESTNAME = \"" + testName + "\";");
+		if(testRunId != null) {
+			js.executeScript("sessionStorage.DT_TESTRUNID = \"" + testRunId + "\";");
+		}
 
 		// click on special offers
 		wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Special Offers")));
