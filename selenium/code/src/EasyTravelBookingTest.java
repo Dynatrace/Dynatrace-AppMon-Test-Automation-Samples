@@ -104,9 +104,6 @@ public class EasyTravelBookingTest {
 		String confirmationMsg = confirmation.getText();
 		confirmationMsg = confirmationMsg.substring(0, 50);
 		Assert.assertEquals("Thank you for using EasyTravel - Have a nice trip!", confirmationMsg);
-
-		// dynatrace: end visit
-		js.executeScript("dynaTrace.endVisit();");
 	}
 
 	@Test
@@ -169,12 +166,15 @@ public class EasyTravelBookingTest {
 		confirmationMsg = confirmationMsg.substring(0, 50);
 		Assert.assertEquals("Thank you for using EasyTravel - Have a nice trip!", confirmationMsg);
 
-		// dynatrace: end visit
-		js.executeScript("dynaTrace.endVisit();");
+		
 	}
 
 	@After
 	public void tearDown() throws Exception {
+		// dynatrace: end visit
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("dynaTrace.endVisit();");
+		
 		driver.quit();
 	}
 
