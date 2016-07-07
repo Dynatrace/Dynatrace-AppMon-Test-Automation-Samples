@@ -20,8 +20,6 @@
 
 The sample run two different test cases (booking a journey to Paris and booking a journey from the special offers page. Both test cases are run in Firefox, Chrome and Internet Explorer.
 
-[Screen recording](./video/easyTravel_Selenium.avi)
-
 ### Option 1 - without test run registration
 
 * Code: [Auto test-run](./code/auto-test-run/)
