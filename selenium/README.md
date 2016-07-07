@@ -22,27 +22,26 @@
 
 The sample run two different test cases (booking a journey to Paris and booking a journey from the special offers page. Both test cases are run in Firefox, Chrome and Internet Explorer.
 
-### Option 1 - without test run registration
-
-* Code: [Auto test-run](./code/auto-test-run/)
+* Code: [Auto test-run](./code/)
 * External libraries for Selenium (http://www.seleniumhq.org/download/):
-  * [selenium-2.53.0](./code/auto-test-run/lib/selenium-2.53.0) 
-  * [third party web driver](./code/auto-test-run/lib/driver)
+  * [selenium-2.53.0](./code/lib/selenium-2.53.0) 
+  * [third party web driver](./code/lib/driver)
+* [Dynatrace Ant library](./code/lib/dynaTrace) - see also https://community.dynatrace.com/community/display/DL/Automation+Library+%28Ant%2C+Maven%29+for+Dynatrace
  
 #### Run
 
 * Start easyTravel (only web required, Standard scenario, manual visits)
-* Make sure the agents are connected to Dynatrace
-* Run the sample with Ant: 
+* Make sure the agents are connected to your Dynatrace AppMon server
+
+*Option 1*: Run the sample with Ant without test registration
 ```
 ant test
 ```
 
+*Option 2*: Run the sample with Ant with test registration
+```
+ant register-test
+```
+
 #### Result
 
-
-
-### Option 2 - with test run registration
-
-* Code: 
-* External libraries: 
