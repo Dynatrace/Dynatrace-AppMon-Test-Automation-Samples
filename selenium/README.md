@@ -26,7 +26,7 @@ The sample run two different test cases (booking a journey to Paris and booking 
 * External libraries for Selenium (http://www.seleniumhq.org/download/):
   * [selenium-2.53.0](./code/lib/selenium-2.53.0) 
   * [third party web driver](./code/lib/driver)
-* [Dynatrace Ant library](./code/lib/dynaTrace) - see also https://community.dynatrace.com/community/display/DL/Automation+Library+%28Ant%2C+Maven%29+for+Dynatrace
+* [Dynatrace Ant library](./code/lib/dynaTrace) - required only for option 2, see also https://community.dynatrace.com/community/display/DL/Automation+Library+%28Ant%2C+Maven%29+for+Dynatrace
  
 #### Run
 
