@@ -16,7 +16,7 @@
 
 	<!-- selenium libs for java -->
 	<path id="classpath">
-		<fileset dir="lib/selenium-2.53.0">
+		<fileset dir="lib/selenium-2.53.1">
 			<include name="**/*.jar" />
 		</fileset>
 	</path>
