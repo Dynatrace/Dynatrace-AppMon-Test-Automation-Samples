@@ -28,19 +28,27 @@ The sample run two different test cases (booking a journey to Paris and booking 
   * [third party web driver](./code/lib/driver)
 * [Dynatrace Ant library](./code/lib/dynaTrace) - required only for option 2, see also https://community.dynatrace.com/community/display/DL/Automation+Library+%28Ant%2C+Maven%29+for+Dynatrace
  
+#### Preparation
+
+```
+git clone https://github.com/Dynatrace/Dynatrace-Test-Automation-Samples
+C:\YOURDIR> Set JAVA_HOME=YOUR JAVA HOME
+C:\YOURDIR> Set PATH=%PATH%;ANTHOME\bin
+```
+
 #### Run
 
 * Start easyTravel (only web required, Standard scenario, manual visits)
 * Make sure the agents are connected to your Dynatrace AppMon server
 
-*Option 1*: Run the sample with Ant without test registration
+*Option 1*: Execute with automatic test number (no test run registration to AppMon Server)
 ```
-ant test
+C:\YOURDIR> ant test
 ```
 
-*Option 2*: Run the sample with Ant with test registration (to pass Dynatrace AppMon Server meta data such as build & version information)
+*Option 2*: Execute with Register Test Run REST CALL (to pass AppMon Server meta data such as build & version information)
 ```
-ant register-test
+C:\YOURDIR> ant register-test
 ```
 
 #### Result
