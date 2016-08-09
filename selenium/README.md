@@ -43,12 +43,12 @@ C:\YOURDIR> Set PATH=%PATH%;ANTHOME\bin
 
 *Option 1*: Execute with automatic test number (no test run registration to AppMon Server)
 ```
-C:\YOURDIR> ant test
+C:\YOURDIR\selenium> ant test
 ```
 
 *Option 2*: Execute with Register Test Run REST CALL (to pass AppMon Server meta data such as build & version information)
 ```
-C:\YOURDIR> ant register-test
+C:\YOURDIR\selenium> ant register-test
 ```
 
 #### Result
