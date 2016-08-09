@@ -19,6 +19,7 @@ Some samples require the demo application easyTravel: https://community.dynatrac
 ## Samples Directory
 
 * [Selenium](./selenium/)
+* [Sauce Labs](./saucelabs/): Selenium (desktop browser) and Appium (mobile browser) testing in the cloud
 * JMeter
 * SoapUI
 * Maven
