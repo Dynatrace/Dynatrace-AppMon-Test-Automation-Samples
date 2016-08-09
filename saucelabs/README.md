@@ -42,6 +42,9 @@ C:\YOURDIR> Set JAVA_HOME=YOUR JAVA HOME
 C:\YOURDIR> Set PATH=%PATH%;ANTHOME\bin
 ```
 
+* update Sauce labs credentials in the file SeleniumHelper.java
+* update AppMon Server access and credentials in the file build.xml (only required for second option)
+
 #### Run
 
 * Start easyTravel (only web required, Standard scenario, manual visits)
