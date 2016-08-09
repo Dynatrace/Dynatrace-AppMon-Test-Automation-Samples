@@ -2,6 +2,10 @@
 
 Selenium (desktop browser) and Appium (mobile browser) testing in the cloud using Sauce Labs (https://saucelabs.com).
 
+<img src="https://github.com/Dynatrace/Dynatrace-Test-Automation-Samples/blob/master/saucelabs/img/saucelabs_infographics.png" />
+
+<img src="https://github.com/Dynatrace/Dynatrace-Test-Automation-Samples/blob/master/saucelabs/img/saucelabs.png" width="300" />
+
 ## Prerequisite
 
 ### easyTravel
