@@ -1,0 +1,107 @@
+<project name="easytravel-selenium-test">
+
+	<!-- directory structure -->
+	<property name="build.dir" value="build/main"/>
+	<property name="src.dir" value="src"/>
+	<property name="report.dir" value="build/reports"/>
+	
+	<!-- Dynatrace AppMon Ant tasks - only needed for test run registration -->
+	<property name="dtBaseDir" value="./lib/dynaTrace" />
+	<import file="${dtBaseDir}/dtTaskDefs.xml"/>
+	
+	<property name="dynatrace.profile.name" value="easyTravel"/>
+	<property name="dynatrace.server.user" value="admin"/>
+	<property name="dynatrace.server.pass" value="admin"/>
+	<property name="dynatrace.server.url" value="https://localhost:8021"/>
+	
+	<property name="dynatrace.version.major" value="1"/>
+	<property name="dynatrace.version.minor" value="2"/>
+	<property name="dynatrace.version.revision" value="3"/>
+
+	<!-- libs for java -->
+	<path id="classpath">
+		<fileset dir="lib">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+	
+
+	<target name="clean">
+		<delete dir="${build.dir}"/>
+	</target>
+
+	<target name="compile">
+		<mkdir dir="${build.dir}"/>
+		<javac srcdir="${src.dir}" destdir="${build.dir}" includeantruntime="false">
+			<classpath refid="classpath"/>
+		</javac>
+	</target>
+
+	<!-- test without pre-registering a test run to Dynatrace AppMon server -->
+	<target name="test" depends="compile">
+		<mkdir dir="${report.dir}"/>
+		<junit printsummary="yes" haltonfailure="no" showoutput="true">
+			<classpath>
+				<path refid="classpath"/>
+				<pathelement location="${build.dir}"/>
+			</classpath>
+			
+			<formatter type="xml" usefile="true" />
+			<batchtest todir="${report.dir}">
+				<fileset dir="${src.dir}" includes="**/*Test.java" />
+			</batchtest>
+		</junit>
+		
+		<junitreport todir="${report.dir}">
+			<fileset dir="${report.dir}">
+				<include name="TEST-*.xml"/>
+			</fileset>
+		</junitreport>
+	</target>
+	
+	<!-- test with test run registration to Dynatrace AppMon server (e.g. to pass meta data such as build number and version) -->
+	<target name="register-test" depends="compile">
+		<mkdir dir="${report.dir}"/>
+		
+		<!-- increase build number -->
+		<buildnumber />
+		
+		<!-- register the test run with Dynatrace AppMon --> 
+		<DtStartTest
+			versionMajor="${dynatrace.version.major}"
+			versionMinor="${dynatrace.version.minor}"
+			versionRevision="${dynatrace.version.revision}"
+			versionMilestone="sprint 3"
+			versionBuild="${build.number}"
+			profilename="${dynatrace.profile.name}"
+			username="${dynatrace.server.user}"
+			password="${dynatrace.server.pass}"
+			serverurl="${dynatrace.server.url}"
+			category="uidriven">
+		</DtStartTest>
+		
+		<junit printsummary="yes" haltonfailure="no" showoutput="true">
+			<sysproperty key="webdriver.chrome.driver" value="${chrome.driver}" />
+			<sysproperty key="webdriver.ie.driver" value="${ie.driver}" />
+			<sysproperty key="dtTestrunID" value="${dtTestrunID}" />
+			<sysproperty key="buildNumber" value="${dynatrace.version.major}.${dynatrace.version.minor}.${dynatrace.version.revision}.${build.number}" />
+			
+			<classpath>
+				<path refid="classpath"/>
+				<pathelement location="${build.dir}"/>
+			</classpath>
+			
+			<formatter type="xml" usefile="true" />
+			<batchtest todir="${report.dir}">
+				<fileset dir="${src.dir}" includes="**/*Test.java" />
+			</batchtest>
+		</junit>
+		
+		<junitreport todir="${report.dir}">
+			<fileset dir="${report.dir}">
+				<include name="TEST-*.xml"/>
+			</fileset>
+		</junitreport>
+		
+	</target>
+</project>

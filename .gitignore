@@ -5,3 +5,8 @@ selenium/code/build/reports/TEST-EasyTravelBookingTest.xml
 selenium/code/build/reports/TESTS-TestSuites.xml
 selenium/code/build/reports/TESTS-TestSuites.xml
 selenium/code/build/reports/TESTS-TestSuites.xml
+saucelabs/code/.classpath
+saucelabs/code/.project
+saucelabs/code/build.number
+saucelabs/code/build/reports/TESTS-TestSuites.xml
+saucelabs/code/build/reports/TEST-EasyTravelSmokeTest.xml

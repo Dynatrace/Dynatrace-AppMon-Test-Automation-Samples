@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="dynaTrace Automation Ant Task Definitions">
+	<description>
+		Defines the dynaTrace Ant Automation Tasks
+	</description>
+
+	<property name="dtBaseDir" value="." />
+
+	<!-- Setting default values for dynaTrace Ant Tasks
+	These values are used if the parameters username, password, serverUrl,
+	profileName or ignoreSSLErrors are not specified.
+	-->
+	<property name="dtUsername" value="admin" />
+	<property name="dtPassword" value="admin" />
+	<property name="dtServerUrl" value="https://localhost:8021" />
+	<property name="dtProfile" value="easyTravel" />
+	<property name="dtIgnoreSSLErrors" value="true" />
+
+	<!-- dtSessionNameProperty: Ant Property that will be used to store the Session Name for e.g.: Start/Stop Recording -->
+	<property name="dtSessionNameProperty" value="SessionName" />
+
+	<!-- Define the dynaTrace Ant Tasks -->
+	<!-- Parameters for dtActivateConfiguration: Activates a Configuration of a System Profile
+		 configuration: name of the configuration to activate in the passed system profile
+	-->
+	<taskdef name="DtActivateConfiguration" classname="com.dynatrace.diagnostics.automation.ant.DtActivateConfiguration">
+		<classpath>
+		  <pathelement location="${dtBaseDir}\com.dynatrace.diagnostics.automation.jar" />
+		</classpath>
+	</taskdef>
+
+	<!-- Parameters for dtClearSession: Clears the Live Session of a System Profile
+		NO ADDITIONAL PARAMETERS NECESSARY
+	-->
+	<taskdef name="DtClearSession" classname="com.dynatrace.diagnostics.automation.ant.DtClearSession">
+		<classpath>
+		  <pathelement location="${dtBaseDir}\com.dynatrace.diagnostics.automation.jar" />
+		</classpath>
+	</taskdef>
+
+	<!-- Parameters for dtEnableProfile: Enables or disables a System Profile
+		 enable: true or false to enable or disable the system profile
+	-->
+	<taskdef name="DtEnableProfile" classname="com.dynatrace.diagnostics.automation.ant.DtEnableProfile">
+		<classpath>
+		  <pathelement location="${dtBaseDir}\com.dynatrace.diagnostics.automation.jar" />
+		</classpath>
+	</taskdef>
+
+	<!-- Parameters for dtGetAgentInfo: Returns information about a connected Agent
+		 agentCountProperty: name of a property that retrieves the number of connected agents
+		 infoForAgentByIndex: index of the agent that you want to retrieve data for
+		 infoForAgentByName: name of the agent that you want to retrieve data for (either us this or infoForAgentByIndex)
+		 agentNameProperty: name of a property that will retrieve the requested agents name
+		 agentHostNameProperty: name of the property that will retrieve the requested agents host name
+		 agentProcessIdProperty: name of the property that will retrieve the requested agents process id
+	-->
+	<taskdef name="DtGetAgentInfo" classname="com.dynatrace.diagnostics.automation.ant.DtGetAgentInfo">
+		<classpath>
+		  <pathelement location="${dtBaseDir}\com.dynatrace.diagnostics.automation.jar" />
+		</classpath>
+	</taskdef>
+
+	<!-- Parameters for dtMemoryDump: Creates a Memory Dump for an agent
+		agentName: name of the agent to create the dump for
+		hostName: host name of the agent to create the dump for
+		processId: process id of the agent to create the dump for
+		dumpType:
+		sessionLocked: true or false
+		doGc: true to perform a GC before executing the dump
+		autoPostProcess: true to automatically post process the memory dump
+		capturePrimitives: true to capture values of primitive objects
+		captureStrings: true to capture values of string objects
+		memoryDumpNameProperty: property name to retrieve the name of the created memory dump
+		dumpStatusProperty: property name that retrieves the status of the memory dump request
+	-->
+	<taskdef name="DtMemoryDump" classname="com.dynatrace.diagnostics.automation.ant.DtMemoryDump">
+		<classpath>
+		  <pathelement location="${dtBaseDir}\com.dynatrace.diagnostics.automation.jar" />
+		</classpath>
+	</taskdef>
+
+	<!-- Parameters for dtReanalyzeSession: reanalyzes a stored session
+	     sessionName: name of the stored session to reanalyze
+	     reanalyzeStatusProperty: name of the property that will retrieve the status of this action
+	-->
+	<taskdef name="DtReanalyzeSession" classname="com.dynatrace.diagnostics.automation.ant.DtReanalyzeSession">
+		<classpath>
+		  <pathelement location="${dtBaseDir}\com.dynatrace.diagnostics.automation.jar" />
+		</classpath>
+	</taskdef>
+
+	<!-- Parameters of dtReport: Creates a report based on data dashboard and iterator dashboard
+	-->
+	<taskdef name="DtReport" classname="com.dynatrace.diagnostics.automation.ant.DtReport">
+		<classpath>
+		  <pathelement location="${dtBaseDir}\com.dynatrace.diagnostics.automation.jar" />
+		</classpath>
+	</taskdef>
+
+	<!-- Parameters for dtRestartCollector: restarts a collector
+		 collector: name of the collector to restart
+		 restart: true to perform the restart
+	-->
+	<taskdef name="DtRestartCollector" classname="com.dynatrace.diagnostics.automation.ant.DtRestartCollector">
+		<classpath>
+		  <pathelement location="${dtBaseDir}\com.dynatrace.diagnostics.automation.jar" />
+		</classpath>
+	</taskdef>
+
+	<!-- Parameters for dtRestartServer: restarts a dynaTrace Server
+		 restart: true to perform the restart
+	-->
+	<taskdef name="DtRestartServer" classname="com.dynatrace.diagnostics.automation.ant.DtRestartServer">
+		<classpath>
+		  <pathelement location="${dtBaseDir}\com.dynatrace.diagnostics.automation.jar" />
+		</classpath>
+	</taskdef>
+
+	<!-- Parameters for dtSensorPlacement: Performs a Hot Sensor Placement
+		 agentId: Id of the agent to perform a hot sensor placement on
+	-->
+	<taskdef name="DtSensorPlacement" classname="com.dynatrace.diagnostics.automation.ant.DtSensorPlacement">
+		<classpath>
+		  <pathelement location="${dtBaseDir}\com.dynatrace.diagnostics.automation.jar" />
+		</classpath>
+	</taskdef>
+
+	<!-- Parameters for DtStartTest: Sets meta data information for a defined set of testruns.
+		 marker: sets a custom marker text, e.g: Release Candiate Build
+		 versionMajor: major version of the build
+		 versionMinor: minor version of the build
+		 versionRevision: revision
+		 versionMilestone: milestone information
+		 versionBuild: buildnumber
+		 category: Set to one of [unit, uidriven, performance, load, webapi] to define the tests category. This defines the set of KPIs for your tests. (default: unit)
+		 platform: (optional) you may override the default platform detected by the agent
+		 loadTestName: Used only for loadtest (category "load"). This defines the subcategory of your loadtest.
+		 debug: set to "true" to get debug logs for this task
+		 *no "agentGroup" parameter as this is not the intention of this task to set metadata for a distinct Agentgroup only
+
+	-->
+	<taskdef name="DtStartTest" classname="com.dynatrace.diagnostics.automation.ant.DtStartTest">
+		<classpath>
+			<pathelement location="${dtBaseDir}\com.dynatrace.diagnostics.automation.jar"/>
+		</classpath>
+	</taskdef>
+
+	<!-- Parameters for DtStartRecording: starts session recording
+		 sessionName: name of the recorded session. if not passed will default to system profile name
+		 sessionDescription: description text for the recorded session
+		 recordingOption: all,violations,timeseries
+		 sessionLocked: if true, session will be locked
+		 appendTimestamp: if true, a timestamp will be appended to the session name
+		 sessionNameProperty: ant property that will retrieve the actual generated session name
+	-->
+	<taskdef name="DtStartRecording" classname="com.dynatrace.diagnostics.automation.ant.DtStartRecording">
+		<classpath>
+		  <pathelement location="${dtBaseDir}\com.dynatrace.diagnostics.automation.jar" />
+		</classpath>
+	</taskdef>
+
+	<!-- Parameters for dtStopRecording: Stops session recording on the passed System Profile
+		 sessionNameProperty: name of the property that retrieves the name of the stored session
+		 doReanalyzeSession: true to automatically reanalyze the session
+		 stopDelay: how long to delay session recording after this call
+	-->
+	<taskdef name="DtStopRecording" classname="com.dynatrace.diagnostics.automation.ant.DtStopRecording">
+		<classpath>
+		  <pathelement location="${dtBaseDir}\com.dynatrace.diagnostics.automation.jar" />
+		</classpath>
+	</taskdef>
+
+	<!-- Parameters for dtStorePurePaths: Store current Live Session
+		 recordingOption: all,violations,timeseries
+		 sessionLocked: if true, session will be locked
+		 appendTimestamp: if true, a timestamp will be appended to the session name
+	-->
+	<taskdef name="DtStorePurePaths" classname="com.dynatrace.diagnostics.automation.ant.DtStorePurePaths">
+		<classpath>
+		  <pathelement location="${dtBaseDir}\com.dynatrace.diagnostics.automation.jar" />
+		</classpath>
+	</taskdef>
+
+	<!-- Parameters for dtThreadDump: invokes a Thread Dump on an agent
+		agentName: name of the agent to create the dump for
+		hostName: host name of the agent to create the dump for
+		processId: process id of the agent to create the dump for
+		sessionLocked: true or false
+		threadDumpNameProperty: property name to retrieve the name of the created thread dump
+		dumpStatusProperty: property name that retrieves the status of the thread dump request
+	-->
+	<taskdef name="DtThreadDump" classname="com.dynatrace.diagnostics.automation.ant.DtThreadDump">
+		<classpath>
+		  <pathelement location="${dtBaseDir}\com.dynatrace.diagnostics.automation.jar" />
+		</classpath>
+	</taskdef>
+</project>

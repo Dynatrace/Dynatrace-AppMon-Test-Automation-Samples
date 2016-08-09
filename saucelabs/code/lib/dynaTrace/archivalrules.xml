@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archival>
+	<rules rulesDashboard="RulesDashboard">
+		<rule name="OnePurePath" description="Verifies that there is at least one PurePath"
+			dataset="//purepaths/purepath" 
+			verifyType="null" expectedValue="0" matchType="Smaller" source="null" />
+
+		<rule name="3APIs" description="Verifies that there are 3 APIs"
+			dataset="//apis/api" 
+			verifyType="null" expectedValue="3" matchType="Equals" source="null" />
+
+		<rule name="10MethodCalls" description="Verifies that the sum of all method call counts is not greater than 10"
+			dataset="//methods/method"
+			verifyType="Sum" expectedValue="10" matchType="Greater" source="count" />
+
+		<rule name="CallsHandleInternal" description="Verifies that there is a method call to handleInternal()"
+			dataset="//methods/method" 
+			verifyType="Contains" expectedValue="handleInternal()" matchType="null" source="method" />
+	</rules>
+	<transactions transactionDashboard="TransactionDashboard">
+		<transaction transactionDashboard="TransactionDashboard" pattern="*" rules="OnePurePath,3APIs" />
+		<transaction pattern="test.*" rules="CallsHandleInternal" />
+		<transaction pattern=".*NA=.*" rules="10MethodCalls" />
+		<transaction name="ByTraceName?testHomeHandler" rules="*" />
+	</transactions>
+</archival>
