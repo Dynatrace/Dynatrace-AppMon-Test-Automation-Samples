@@ -2,9 +2,7 @@
 
 Selenium (desktop browser) and Appium (mobile browser) testing in the cloud using Sauce Labs (https://saucelabs.com).
 
-<img src="https://github.com/Dynatrace/Dynatrace-Test-Automation-Samples/blob/master/saucelabs/img/saucelabs_infographics.png" />
-
-<img src="https://github.com/Dynatrace/Dynatrace-Test-Automation-Samples/blob/master/saucelabs/img/saucelabs.png" width="300" />
+<img src="https://github.com/Dynatrace/Dynatrace-Test-Automation-Samples/blob/master/saucelabs/img/saucelabs_infographics.png" /> <img src="https://github.com/Dynatrace/Dynatrace-Test-Automation-Samples/blob/master/saucelabs/img/saucelabs.png" width="300" />
 
 ## Prerequisite
 
@@ -12,12 +10,15 @@ Selenium (desktop browser) and Appium (mobile browser) testing in the cloud usin
 
 * Download the demo application easyTravel: https://community.dynatrace.com/community/display/DL/Demo+Applications+-+easyTravel
 * Follow the installation & configuration steps: https://community.dynatrace.com/community/display/DL/Demo+Applications+-+easyTravel#DemoApplications-easyTravel-InstallingeasyTravel
-* Make sure that easyTravel portal is running on http://localhost:8079/ 
+* easyTravel portal needs to run on a server which is reachable from the outside
+* if that's is not possible, you can run it locally (e.g. http://localhost:8079/) but need to configure a proxy within Sauce Labs (https://saucelabs.com/beta/tunnels)
 
 ### Sauce Labs
 
 * Register for a Free Trial of Sauce Labs: https://saucelabs.com
 * Add your user name and access key in the file SeleniumHelper.java
+
+<img src="https://github.com/Dynatrace/Dynatrace-Test-Automation-Samples/blob/master/saucelabs/img/saucelabs_accesskey.png" />
 
 ### Others
 
@@ -26,12 +27,11 @@ Selenium (desktop browser) and Appium (mobile browser) testing in the cloud usin
 
 ## Sample
 
-The sample run two different test cases (booking a journey to Paris and booking a journey from the special offers page. Both test cases are run in Firefox, Chrome and Internet Explorer.
+The sample runs one simple use case (log-in with user greta, click on a few pages, log-out) in multiple browsers (desktop and mobile).
 
 * [Code](./code/)
-* External libraries for Selenium (http://www.seleniumhq.org/download/):
-  * [selenium-2.53.0](./code/lib/selenium-2.53.0) 
-  * [third party web driver](./code/lib/driver)
+* External libraries: 
+  * [selenium, json, saucelabs, ...](./code/lib/) 
 * [Dynatrace Ant library](./code/lib/dynaTrace) - required only for option 2, see also https://community.dynatrace.com/community/display/DL/Automation+Library+%28Ant%2C+Maven%29+for+Dynatrace
 
 #### Preparation
@@ -41,6 +41,9 @@ git clone https://github.com/Dynatrace/Dynatrace-Test-Automation-Samples
 C:\YOURDIR> Set JAVA_HOME=YOUR JAVA HOME
 C:\YOURDIR> Set PATH=%PATH%;ANTHOME\bin
 ```
+
+* update Sauce labs credentials in the file SeleniumHelper.java
+* update AppMon Server access and credentials in the file build.xml (only required for second option)
 
 #### Run
 
