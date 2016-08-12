@@ -38,13 +38,18 @@ To embed a chart on your **LOCAL/INTRANET** website put the following code somew
 ## Building
 
 1. Install required dependencies by executing
+   
    > npm install
+
 1. Build the javascript by running
+
    > npm run build
+
 1. Copy */js* and *index.html* to your site's directory
 
 ## Developing
 If you are making changes to this project and want a hot-reload feature, use:
+
 > npm run dev
 
 **Feel free to send Pull Requests**
@@ -68,7 +73,7 @@ If you are making changes to this project and want a hot-reload feature, use:
    
    1. Register and run some tests
 
-### The site is completely blank
+### The site is completely blank:
 
    **Solution**:
 
