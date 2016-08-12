@@ -20,6 +20,7 @@ Some samples require the demo application easyTravel: https://community.dynatrac
 
 * [Selenium](./selenium/)
 * [Sauce Labs](./saucelabs/): Selenium (desktop browser) and Appium (mobile browser) testing in the cloud
+* [Web Dashboard Widget](./web-dashboard-widget/): Displaying test automation data in the web dashboard as a chart
 * JMeter
 * SoapUI
 * Maven
