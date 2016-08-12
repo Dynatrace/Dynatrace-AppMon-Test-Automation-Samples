@@ -53,27 +53,26 @@ If you are making changes to this project and want a hot-reload feature, use:
 
 ### Chart is not visible, and instead *Error: 404 NotFound* is shown:
    
-   #### Cause: System profile has not been found on the server
+   **Cause:** System profile has not been found on the server
    
-   #### Solution:
+   **Solution**:
    
    1. Check if the System Profile you have supplied is available
    1. Click the *Go to settings wizard* and generate a new link
 
 ### Chart is not visible, and instead *No test metadata was set or no testrun occurred between ...* is shown:
    
-   #### Cause: There was no test automation data registered
+   **Cause:** There was no test automation data registered
 
-   #### Solution:
+   **Solution**:
    
    1. Register and run some tests
 
 ### The site is completely blank
 
-   #### Solution:
+   **Solution**:
 
    1. Check if connection details are correct
-   2. Check if server's certificate is valid, and if not add it to bro
-   1. wser exceptions
-   3. Open developer console (*F12* under chrome), go to console and see if any of the following errors is present:
+   1. Check if server's certificate is valid, and if not add it to browser exceptions
+   1. Open developer console (*F12* under chrome), go to console and see if any of the following errors is present:
        * Message containing: *CORS / Cross-Origin* keywords - use https for your server connection  
