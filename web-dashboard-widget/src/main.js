@@ -25,12 +25,11 @@ router.beforeEach(() => {
     window.scrollTo(0, 0)
 })
 
-console.log(window.location.toString());
-
 google.charts.load('current', {
     'packages': ['corechart']
 })
 
+// this is all about charts, so we wait for them to load
 google.charts.setOnLoadCallback(() => {
     router.start(App, '#app')
 })

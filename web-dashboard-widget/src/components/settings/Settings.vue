@@ -14,7 +14,7 @@
                 <input type="submit" class="btn btn-primary save-settings" value="Generate">
             </fieldset>
         </form>
-        <code><a href="{{url}}">{{ url }}</a></code>
+        <code v-if="url"><a href="{{url}}">{{ url }}</a></code>
     </div>
 </template>
 <style>
@@ -28,10 +28,7 @@
 </style>
 <script>
     import SettingsParameters from './SettingsParameters.vue'
-    import {
-        getTestFilters,
-        parametersToQuery
-    } from '../../utils.js'
+    import * as Utils from '../../utils.js'
 
     export default {
         name: 'Settings',
@@ -41,7 +38,7 @@
         data: () => {
             return {
                 url: '',
-                selected: 0,
+                selected: 1,
                 defaultParameters: [{
                     name: 'protocol',
                     value: 'https'
@@ -64,30 +61,35 @@
                     value: 'Monitoring'
                 }, {
                     name: 'update',
-                    display: 'Update (s)',
+                    display: 'Update every (s)',
                     type: 'number',
                     value: '30'
                 }],
                 components: [{
                     name: 'Pie Chart',
                     internal: 'pie',
-                    parameters: getTestFilters()
+                    parameters: Utils.getTestFilters()
                 }, {
                     name: 'Column Chart',
                     internal: 'column',
-                    parameters: getTestFilters()
+                    parameters: Utils.getTestFilters()
                 }],
             }
         },
         props: ["parameters"],
         methods: {
+            // updates the URL for display
             updateURL() {
-                let addr = window.location.href.replace(window.location.hash, '');
+                // take the current url and remove the anchor part of it
+                let addr = window.location.href.replace(window.location.hash, '')
+                // check which chart type was selected
                 let selectedComponent = this.components[this.selected]
-                addr += '#!/'+selectedComponent.internal + '?'
+                    // add the task type internal name as a hash to display correct component (vue things)
+                addr += '#!/' + selectedComponent.internal + '?'
+                    // iterate over both default parameters (applicable to all chart types) and chart specific parameters and put them in query string
                 for (let param of this.defaultParameters.concat(selectedComponent.parameters)) {
                     if (param.value) {
-                        addr += param.name + '=' + param.value + '&'
+                        addr += param.name + '=' + encodeURIComponent(param.value) + '&'
                     }
                 }
                 this.url = addr

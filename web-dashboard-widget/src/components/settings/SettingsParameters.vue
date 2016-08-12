@@ -3,7 +3,7 @@
         <ul class="list-unstyled list-inline">
             <li v-for="val in parameters" class="form-group">
                 <label for="cfg-{{ val.name }}">
-                    {{ val.display ? val.display : uppercaseFirst(val.name) }}
+                    {{{ val.display ? val.display : beautify(val.name) }}}
                 </label>
                 <input id="cfg-{{val.name}}" class="form-control" type="{{ val.type ? val.type : 'text' }}" v-model="val.value" name="{{val.name}}">
             </li>
@@ -25,8 +25,11 @@
         name: 'SettingsParameters',
         props: ["parameters"],
         methods: {
-            uppercaseFirst(key) {
-                return key.charAt(0).toUpperCase() + key.slice(1)
+            beautify(key) {
+                //turn camelCase into camel case
+                let display = key.replace(/([A-Z])/g, " $1").toLowerCase()
+                //capitalise first letter leading to Camel case                
+                return display.charAt(0).toUpperCase() + display.slice(1)
             }
         }
     }

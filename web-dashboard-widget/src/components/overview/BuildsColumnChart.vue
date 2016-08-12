@@ -20,7 +20,7 @@
                 for (let testRun of this.testRuns) {
                     data.push([this.formatVersion(testRun), testRun.numPassed, testRun.numFailed, testRun.numVolatile, testRun.numImproved, testRun.numDegraded, testRun.numInvalidated])
                 }
-                return data;
+                return data
             },
             draw() {
                 let data = new google.visualization.DataTable()
@@ -40,7 +40,7 @@
                     bar: {
                         groupWidth: '90%'
                     }
-                });
+                })
                 this.chart.draw(data, options)
             }
         }

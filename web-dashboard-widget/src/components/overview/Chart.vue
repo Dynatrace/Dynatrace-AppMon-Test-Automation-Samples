@@ -64,14 +64,17 @@
                             fontSize: 10
                         }
                     },
+                    // colors from dynatrace rich client
                     colors: ['#2ab06f', '#dc172a', '#ffe11c', '#2ab6f4', '#ef651f', '#b7b7b7']
                 }
             }
         },
         watch: {
+            //redraw if testRuns changes
             testRuns: 'draw'
         },
         created() {
+            // start update interval and fetch first result
             this.handleSettings()
         },
         ready() {
@@ -88,25 +91,30 @@
             'settings-saved': 'handleSettings'
         },
         methods: {
+            //handles settings changes
             handleSettings() {
-                if(this.interval) {
+                if (this.interval) {
                     clearInterval(this.interval)
                 }
-                this.interval = setInterval(this.fetch, Utils.getParameter('update')*1000)
+                this.interval = setInterval(this.fetch, Utils.getParameter('update') * 1000)
                 this.fetch()
             },
             fetch() {
-                Endpoint.fetch('rest/management/profiles/' + Utils.getParameter('profile') + '/testruns.jsonp' + Utils.convertParametersToQuery(this.parameters)).then((response) => {
-                    this.testRuns = response.testRuns
-                    this.message = response.message
-                }).catch((err) => {
-                    this.testRuns = {}
-                    this.message = err
-                })
+                Endpoint.fetch('rest/management/profiles/' + Utils.getParameter('profile') + '/testruns.jsonp' +
+                        // querystring: we could in theory use built-in superagent api for specyfing query string, but this is easier since we don't convert it to weird objects
+                        Utils.convertParametersToQuery(this.parameters))
+                    .then((response) => {
+                        this.testRuns = response.testRuns
+                        this.message = response.message
+                    }).catch((err) => {
+                        this.testRuns = {}
+                        this.message = err
+                    })
             },
             handleResize(event) {
                 this.chartOptions.height = window.innerHeight,
-                this.draw()
+                    //we do not change width as it's set to 100%
+                    this.draw()
             },
         }
     }

@@ -4,7 +4,7 @@
         name: 'BuildsPieChart',
         mixins: [Chart],
         ready() {
-            this.chart = new google.visualization.PieChart(document.getElementById("chart"));
+            this.chart = new google.visualization.PieChart(document.getElementById("chart"))
         },
         methods: {
             draw() {
