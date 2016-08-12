@@ -54,6 +54,7 @@
                     hAxis: {
                         slantedText: true,
                         slantedTextAngle: 60,
+                        direction: -1,
                         textStyle: {
                             fontSize: 10
                         }
