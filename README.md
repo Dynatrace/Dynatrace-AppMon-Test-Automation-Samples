@@ -47,6 +47,7 @@ Post any problems, questions or suggestions to the Dynatrace Community's [Applic
 
 - [Online Perf Clinic - Eclipse and Jenkins Integration](https://youtu.be/p4Vh6BWlPjg)
 - [Online Perf Clinic - Metrics-Driven Continuous Delivery with Dynatrace Test Automation](https://youtu.be/TXPSDpy7unw)
+- [Online Perf Clinic - UEM Test Automation](https://www.youtube.com/watch?v=-OSSKwD4WKQ)
 
 <a name="blogs"/>
 ### Blogs
