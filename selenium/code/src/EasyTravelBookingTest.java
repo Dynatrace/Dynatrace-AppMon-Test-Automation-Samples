@@ -91,6 +91,20 @@ public class EasyTravelBookingTest {
 		driver.findElement(By.id("iceform:j_idt127")).click();
 		
 		wait.until(ExpectedConditions.textToBePresentInElementValue(By.id("iceform:creditCardOwner"), "Michael Knueppel"));
+		
+		// Click in dropdown box "Year", select a year (press down arrow) and press enter to set year
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("iceform:expirationYear")));
+		driver.findElement(By.id("iceform:expirationYear")).click();
+		driver.findElement(By.id("iceform:expirationYear")).sendKeys(Keys.ARROW_DOWN);
+		driver.findElement(By.id("iceform:expirationYear")).sendKeys(Keys.ARROW_DOWN);
+		driver.findElement(By.id("iceform:expirationYear")).sendKeys(Keys.ARROW_DOWN);
+		driver.findElement(By.id("iceform:expirationYear")).sendKeys(Keys.ARROW_DOWN);
+		driver.findElement(By.id("iceform:expirationYear")).sendKeys(Keys.ARROW_DOWN);
+		driver.findElement(By.id("iceform:expirationYear")).sendKeys(Keys.ARROW_DOWN);
+		driver.findElement(By.id("iceform:expirationYear")).sendKeys(Keys.ARROW_DOWN);
+		driver.findElement(By.id("iceform:expirationYear")).sendKeys(Keys.ENTER);
+		
+		// after filling out credit card information, click on Next button
 		driver.findElement(By.id("iceform:bookPaymentNext")).click();
 		
 		// click on finish
@@ -150,8 +164,21 @@ public class EasyTravelBookingTest {
 		wait.until(ExpectedConditions.elementToBeClickable(By.id("iceform:j_idt127")));
 		driver.findElement(By.id("iceform:j_idt127")).click();
 
-		wait.until(
-				ExpectedConditions.textToBePresentInElementValue(By.id("iceform:creditCardOwner"), "Maria O'Donnel"));
+		wait.until(ExpectedConditions.textToBePresentInElementValue(By.id("iceform:creditCardOwner"), "Maria O'Donnel"));
+		
+		// Click in dropdown box "Year", select a year (press down arrow) and press enter to set year
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("iceform:expirationYear")));
+		driver.findElement(By.id("iceform:expirationYear")).click();
+		driver.findElement(By.id("iceform:expirationYear")).sendKeys(Keys.ARROW_DOWN);
+		driver.findElement(By.id("iceform:expirationYear")).sendKeys(Keys.ARROW_DOWN);
+		driver.findElement(By.id("iceform:expirationYear")).sendKeys(Keys.ARROW_DOWN);
+		driver.findElement(By.id("iceform:expirationYear")).sendKeys(Keys.ARROW_DOWN);
+		driver.findElement(By.id("iceform:expirationYear")).sendKeys(Keys.ARROW_DOWN);
+		driver.findElement(By.id("iceform:expirationYear")).sendKeys(Keys.ARROW_DOWN);
+		driver.findElement(By.id("iceform:expirationYear")).sendKeys(Keys.ARROW_DOWN);
+		driver.findElement(By.id("iceform:expirationYear")).sendKeys(Keys.ENTER);
+		
+		// after filling out credit card information, click on Next button
 		driver.findElement(By.id("iceform:bookPaymentNext")).click();
 
 		// click on finish
