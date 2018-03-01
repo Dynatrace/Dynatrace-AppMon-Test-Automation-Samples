@@ -8,7 +8,7 @@ Collection of Samples showcasing Metrics-Driven Continuous Delivery with AppMon 
 
 **Watch Andreas Grabner talking about Metrics-Driven Continuous Delivery and how you can achieve it with AppMon Test Automation:**
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/TXPSDpy7unw/0.jpg)](https://www.youtube.com/watch?v=TXPSDpy7unw)
+[![Andreas Grabner talking about Metrics-Driven Continuous Delivery](https://img.youtube.com/vi/TXPSDpy7unw/0.jpg)](https://www.youtube.com/watch?v=TXPSDpy7unw)
 
 ## Prerequisite
 
@@ -33,9 +33,11 @@ Post any problems, questions or suggestions to the Dynatrace Community's [Applic
 <br />**Pull Requests Welcome!**
 
 <a name="resources"/>
+
 ## Additional Resources
 
 <a name="doc"/>
+
 ### Dynatrace AppMon Documentation
 
 - [Continuous Delivery & Test Automation](https://community.dynatrace.com/community/pages/viewpage.action?pageId=215161284)
@@ -43,6 +45,7 @@ Post any problems, questions or suggestions to the Dynatrace Community's [Applic
 - [Integrate Dynatrace in Continous Integration Builds](https://community.dynatrace.com/community/display/DOCDT63/Integrate+Dynatrace+in+Continuous+Integration+Builds)
 
 <a name="webinar"/>
+
 ### Recorded Webinar
 
 - [Online Perf Clinic - Eclipse and Jenkins Integration](https://youtu.be/p4Vh6BWlPjg)
@@ -50,6 +53,7 @@ Post any problems, questions or suggestions to the Dynatrace Community's [Applic
 - [Online Perf Clinic - UEM Test Automation](https://www.youtube.com/watch?v=-OSSKwD4WKQ)
 
 <a name="blogs"/>
+
 ### Blogs
 
 - [Continuous Performance Validation in Continuous Integration Environments](http://apmblog.dynatrace.com/2013/11/27/continuous-performance-validation-in-continuous-integration-environments/)
