@@ -4,7 +4,7 @@
   "description": "A widget for dynatrace web-dashboard displaying test automation data in chart form",
   "main": "index.js",
   "dependencies": {
-    "superagent": "^2.1.0",
+    "superagent": ">=3.7.0",
     "superagent-jsonp": "^0.1.1",
     "vue": "^1.0.26",
     "vue-router": "^0.7.13"
@@ -20,7 +20,7 @@
     "vue-loader": "^8.5.3",
     "vue-style-loader": "^1.0.0",
     "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-dev-server": ">=3.1.11"
   },
   "scripts": {
     "dev": "webpack-dev-server --inline --hot --no-info --host localhost --https",
