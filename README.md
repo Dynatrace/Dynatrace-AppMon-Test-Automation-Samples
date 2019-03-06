@@ -18,10 +18,10 @@ Some samples require the demo application easyTravel: https://community.dynatrac
 
 ## Samples Directory
 
-* [Selenium](./selenium/)
-* [Sauce Labs](./saucelabs/): Selenium (desktop browser) and Appium (mobile browser) testing in the cloud
-* [Web Dashboard Widget](./web-dashboard-widget/): Displaying test automation data in the web dashboard as a chart
-* JMeter
+* [Selenium](./selenium)
+* [Sauce Labs](./saucelabs): Selenium (desktop browser) and Appium (mobile browser) testing in the cloud
+* [Web Dashboard Widget](./web-dashboard-widget): Displaying Test Automation data in the web dashboard as a chart
+* [JMeter](./jmeter): Separating web API load tests from performance web API tests monitored by Test Automation
 * SoapUI
 * Maven
 * Ant
