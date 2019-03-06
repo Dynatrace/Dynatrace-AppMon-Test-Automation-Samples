@@ -10,7 +10,7 @@
 * Follow the installation & configuration steps: https://community.dynatrace.com/community/display/DL/Demo+Applications+-+easyTravel#DemoApplications-easyTravel-InstallingeasyTravel
 * Make sure that easyTravel portal is running on http://localhost:8079/ 
 
-<img src="https://github.com/Dynatrace/Dynatrace-AppMon-Test-Automation-Samples/blob/master/selenium/img/easyTravelConfiguration.png" width=300" /> <img src="https://github.com/Dynatrace/Dynatrace-AppMon-Test-Automation-Samples/blob/master/selenium/img/easyTravelRunning.png" width=300" />
+<img src="https://github.com/Dynatrace/Dynatrace-AppMon-Test-Automation-Samples/blob/master/selenium/img/easyTravelConfiguration.png" width=300" />
 
 ### Others
 
@@ -22,7 +22,7 @@
 
 The sample run two different test cases (booking a journey to Paris and booking a journey from the special offers page. Both test cases are run in Firefox, Chrome and Internet Explorer.
 
-* [Code](./code/)
+* [Code](./code)
 * External libraries for Selenium (http://www.seleniumhq.org/download/):
   * [selenium-2.53.0](./code/lib/selenium-2.53.0) 
   * [third party web driver](./code/lib/driver)
