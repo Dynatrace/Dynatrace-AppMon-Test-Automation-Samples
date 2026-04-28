@@ -1,3 +1,7 @@
+⚠️ This repository has been archived and is no longer maintained.
+The code is available for historical reference or archival purposes.
+
+
 # Dynatrace Test Automation Samples Library
 
 Collection of Samples showcasing Metrics-Driven Continuous Delivery with AppMon Test Automation
